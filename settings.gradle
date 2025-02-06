@@ -1,0 +1,2 @@
+rootProject.name = "SVE Fresh Products"
+include ':app'
