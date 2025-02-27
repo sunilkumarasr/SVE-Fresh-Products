@@ -591,8 +591,6 @@ var cart_id=0
             val apiServices = APIClient.client.create(Api::class.java)
             var call=  apiServices.getCartList(getString(R.string.api_key),customer_id =customerid)
 
-
-
             call?.enqueue(object : Callback<CartListResponse> {
                 @SuppressLint("WrongConstant")
                 override fun onResponse(call: Call<CartListResponse>, response: Response<CartListResponse>) {

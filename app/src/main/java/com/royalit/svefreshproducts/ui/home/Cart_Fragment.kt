@@ -146,9 +146,6 @@ class Cart_Fragment : Fragment(), Cart_Adapter.ProductItemClick,
         getCart()
         getPromoCode()
 
-
-
-
         binding.btnPlaceOrder.setOnClickListener {
             if (binding.rbOnline.isChecked) {
 //                rzp_live_mSjl2kggxi77aG
@@ -171,9 +168,7 @@ class Cart_Fragment : Fragment(), Cart_Adapter.ProductItemClick,
                 Toast.makeText(activity, "Please Select Payment Method", Toast.LENGTH_LONG).show()
             }
 
-
         }
-
 
         try {
             viewModel!!.getCartItems.observe(requireActivity()) { cartItems ->
@@ -200,7 +195,6 @@ class Cart_Fragment : Fragment(), Cart_Adapter.ProductItemClick,
         } catch (e: NullPointerException) {
             e.printStackTrace()
         }
-
 
         binding.btnPromo.setOnClickListener {
 
@@ -311,12 +305,10 @@ class Cart_Fragment : Fragment(), Cart_Adapter.ProductItemClick,
         }
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding
     }
-
 
     override fun onProductItemClick(itemsData: CartItems?) {
 

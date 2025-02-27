@@ -73,8 +73,7 @@ class Cart_Adapter(
                 }
                 holder.binding.nameTVID.text = data.product_name
                 holder.binding.qtyTVID.text = data.cartQty.toString() + ""
-//        holder.binding.priceTVID.setText("Total : \u20b9 " + data.getFinal_price());
-
+                //        holder.binding.priceTVID.setText("Total : \u20b9 " + data.getFinal_price());
                 //        holder.binding.priceTVID.setText("Total : \u20b9 " + data.getFinal_price());
                 try {
                     if(Utilities.customer_category==2) {
@@ -84,14 +83,10 @@ class Cart_Adapter(
                         val final_amt: Int = data.getOffer_price().toInt() * data.cartQty.toInt()
                         holder.binding.priceTVID.text = "Total : \u20b9 $final_amt"
                     }
-
                 } catch (e: NullPointerException) {
-                    e.printStackTrace()
-                } catch (e: NumberFormatException) {
                     e.printStackTrace()
                 }
                 holder.binding.weightVID.text = "" + data.weight
-
 
                 holder.binding.removeTVID.setOnClickListener { v ->
                     val builder1 =
@@ -104,7 +99,6 @@ class Cart_Adapter(
                     ) {
                         dialogInterface: DialogInterface?, i1: Int ->
                         quantityChangeListener?.onDeleteCartItem(data)
-
                     }
                     builder1.setNegativeButton("No", null)
                     builder1.create().show()
@@ -188,7 +182,6 @@ class Cart_Adapter(
                         click!!.onAddToCartClicked(data, carstQty,1)
                     }
                 }
-
 
             }
         }
